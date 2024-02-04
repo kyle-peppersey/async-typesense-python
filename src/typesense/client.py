@@ -19,3 +19,7 @@ class Client(object):
         self.analytics = Analytics(self.api_call)
         self.operations = Operations(self.api_call)
         self.debug = Debug(self.api_call)
+
+
+    async def close(self):
+        await self.api_call.close()
